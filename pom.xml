@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>groupId</groupId>
+    <artifactId>GlassLewisWebAutomation</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>UIAutomatio</name>
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>test/bdd/features/</directory>
+            </resource>
+            <resource>
+                <directory>resources/</directory>
+            </resource>
+        </resources>
+        <testSourceDirectory>test</testSourceDirectory>
+
+        <plugins>
+    <plugin>
+        <name>io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm</name>
+        <noOutput>true</noOutput>
+    </plugin>
+
+    <plugin>
+        <name>json</name>
+        <extension>json</extension>
+        <outputDirectory>target/cucumber-json-report</outputDirectory>
+    </plugin>
+
+    <plugin>
+        <name>pretty</name>
+    </plugin>
+
+    <plugin>
+        <name>html</name>
+        <extension>html</extension>
+        <outputDirectory>target/cucumber-html-report</outputDirectory>
+    </plugin>
+
+
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+            <executions>
+                <execution>
+                    <id>generateRunners</id>
+                    <phase>generate-test-sources</phase>
+                    <goals>
+                        <goal>generateRunners</goal>
+                    </goals>
+                    <configuration>
+                        <glue>
+                            <package>steps</package>
+                        </glue>
+                        <outputDirectory>${project.build.directory}/generated-test-sources/cucumber
+                        </outputDirectory>
+                        <featuresDirectory>test/bdd/features</featuresDirectory>
+                        <cucumberOutputDir>target</cucumberOutputDir>
+                        <plugins>
+                            <plugin>
+                                <name>io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm</name>
+                                <noOutput>true</noOutput>
+                            </plugin>
+
+                            <plugin>
+                                <name>json</name>
+                                <extension>json</extension>
+                                <outputDirectory>target/cucumber-json-report</outputDirectory>
+                            </plugin>
+
+                            <plugin>
+                                <name>pretty</name>
+                            </plugin>
+
+                            <plugin>
+                                <name>html</name>
+                                <extension>html</extension>
+                                <outputDirectory>target/cucumber-html-report</outputDirectory>
+                            </plugin>
+                        </plugins>
+                        <strict>true</strict>
+                        <monochrome>true</monochrome>
+                        <tags>
+                            <tag>@sanity</tag>
+                        </tags>
+                        <useTestNG>false</useTestNG>
+                        <namingScheme>pattern</namingScheme>
+                        <namingPattern>Parallel{c}IT</namingPattern>
+                        <parallelScheme>FEATURE</parallelScheme>
+                        <!--   <customVmTemplate>src/test/resources/cucumber-custom-runner.vm</customVmTemplate>-->
+                        <packageName>steps</packageName>
+                    </configuration>
+                </execution>
+            </executions>
+            </plugin>
+
+
+</plugins>
+
+
+    </build>
+    <dependencies>
+
+            <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>3.12.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-junit</artifactId>
+                <version>4.7.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-cucumber4-jvm</artifactId>
+                <version>2.13.0</version>
+            </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>4.7.4</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>4.7.4</version>
+        </dependency>
+
+
+    </dependencies>
+
+
+    
+</project>
