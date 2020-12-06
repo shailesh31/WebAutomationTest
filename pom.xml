@@ -1,13 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <groupId>consumer-web-automation</groupId>
+    <artifactId>consumer-web-automation</artifactId>
+    <name>TestAutomation</name>
+    <description>Test Automation Framework for Grofers Web</description>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-    <groupId>groupId</groupId>
-    <artifactId>GlassLewisWebAutomation</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <name>UIAutomatio</name>
+
+    <url>http://maven.apache.org</url>
+
+
     <build>
         <sourceDirectory>src</sourceDirectory>
         <resources>
@@ -19,132 +23,247 @@
             </resource>
         </resources>
         <testSourceDirectory>test</testSourceDirectory>
-
         <plugins>
-    <plugin>
-        <name>io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm</name>
-        <noOutput>true</noOutput>
-    </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin.version}</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                    </systemPropertyVariables>
 
-    <plugin>
-        <name>json</name>
-        <extension>json</extension>
-        <outputDirectory>target/cucumber-json-report</outputDirectory>
-    </plugin>
+                    <forkCount>${acceptance.test.parallel.count}</forkCount>
+                    <reuseForks>false</reuseForks>
+                    <rerunFailingTestsCount>${RETRY_COUNT}</rerunFailingTestsCount>
+                    <includes>
+                        <include>**/*IT.class</include>
+                    </includes>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        -Dcucumber.options="--plugin pretty --plugin json:target/cucumber-json-report --plugin
+                        html:target/cucumber-html-report --plugin io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"
+                    </argLine>
 
-    <plugin>
-        <name>pretty</name>
-    </plugin>
-
-    <plugin>
-        <name>html</name>
-        <extension>html</extension>
-        <outputDirectory>target/cucumber-html-report</outputDirectory>
-    </plugin>
-
-
-
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <!-- Compiler plugin configures the java version to be used for compiling
+                the code -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>${maven.compiler.plugin.version}</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
             <plugin>
-            <executions>
-                <execution>
-                    <id>generateRunners</id>
-                    <phase>generate-test-sources</phase>
-                    <goals>
-                        <goal>generateRunners</goal>
-                    </goals>
-                    <configuration>
-                        <glue>
-                            <package>steps</package>
-                        </glue>
-                        <outputDirectory>${project.build.directory}/generated-test-sources/cucumber
-                        </outputDirectory>
-                        <featuresDirectory>test/bdd/features</featuresDirectory>
-                        <cucumberOutputDir>target</cucumberOutputDir>
-                        <plugins>
-                            <plugin>
-                                <name>io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm</name>
-                                <noOutput>true</noOutput>
-                            </plugin>
-
-                            <plugin>
-                                <name>json</name>
-                                <extension>json</extension>
-                                <outputDirectory>target/cucumber-json-report</outputDirectory>
-                            </plugin>
-
-                            <plugin>
-                                <name>pretty</name>
-                            </plugin>
-
-                            <plugin>
-                                <name>html</name>
-                                <extension>html</extension>
-                                <outputDirectory>target/cucumber-html-report</outputDirectory>
-                            </plugin>
-                        </plugins>
-                        <strict>true</strict>
-                        <monochrome>true</monochrome>
-                        <tags>
-                            <tag>@sanity</tag>
-                        </tags>
-                        <useTestNG>false</useTestNG>
-                        <namingScheme>pattern</namingScheme>
-                        <namingPattern>Parallel{c}IT</namingPattern>
-                        <parallelScheme>FEATURE</parallelScheme>
-                        <!--   <customVmTemplate>src/test/resources/cucumber-custom-runner.vm</customVmTemplate>-->
-                        <packageName>steps</packageName>
-                    </configuration>
-                </execution>
-            </executions>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>${spotbugs.plugin.version}</version>
+                <configuration>
+                    <omitVisitors>Naming,DefaultEncodingDetector</omitVisitors>
+                    <excludeFilterFile>spotbugs-exclude.xml</excludeFilterFile>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs</artifactId>
+                        <version>${spotbugs.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
+            <plugin>
+                <groupId>com.github.temyers</groupId>
+                <artifactId>cucumber-jvm-parallel-plugin</artifactId>
+                <version>${cucumber.jvm.parallel.version}</version>
+                <executions>
+                    <execution>
+                        <id>generateRunners</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>generateRunners</goal>
+                        </goals>
+                        <configuration>
+                            <glue>
+                                <package>steps</package>
+                            </glue>
+                            <outputDirectory>${project.build.directory}/generated-test-sources/cucumber
+                            </outputDirectory>
+                            <featuresDirectory>test/bdd/features</featuresDirectory>
+                            <cucumberOutputDir>target</cucumberOutputDir>
+                            <plugins>
+                                <plugin>
+                                    <name>io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm</name>
+                                    <noOutput>true</noOutput>
+                                </plugin>
 
-</plugins>
+                                <plugin>
+                                    <name>json</name>
+                                    <extension>json</extension>
+                                    <outputDirectory>target/cucumber-json-report</outputDirectory>
+                                </plugin>
 
+                                <plugin>
+                                    <name>pretty</name>
+                                </plugin>
 
+                                <plugin>
+                                    <name>html</name>
+                                    <extension>html</extension>
+                                    <outputDirectory>target/cucumber-html-report</outputDirectory>
+                                </plugin>
+                            </plugins>
+                            <strict>true</strict>
+                            <monochrome>true</monochrome>
+                            <tags>
+                                <tag>@sanity</tag>
+                            </tags>
+                            <useTestNG>false</useTestNG>
+                            <namingScheme>pattern</namingScheme>
+                            <namingPattern>Parallel{c}IT</namingPattern>
+                            <parallelScheme>FEATURE</parallelScheme>
+                            <!--   <customVmTemplate>src/test/resources/cucumber-custom-runner.vm</customVmTemplate>-->
+                            <packageName>steps</packageName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
+
+
+    <properties>
+        <cucumber.version>1.2.4</cucumber.version>
+        <version.allure>2.13.0</version.allure>
+        <appium.version>6.1.0</appium.version>
+        <rest.assured.version>3.2.0</rest.assured.version>
+        <cucumber.jvm.parallel.version>5.0.0</cucumber.jvm.parallel.version>
+        <cucumber.java.version>4.7.4</cucumber.java.version>
+        <!--!!<maven.surefire.plugin.version>3.0.0-M3</maven.surefire.plugin.version>-->
+        <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
+        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+        <acceptance.test.parallel.count>2</acceptance.test.parallel.count>
+        <postgresql.version>42.2.5</postgresql.version>
+        <RETRY_COUNT>1</RETRY_COUNT>
+        <aspectj.version>1.8.10</aspectj.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spotbugs.plugin.version>3.1.12.2</spotbugs.plugin.version>
+        <spotbugs.version>4.0.0-beta4</spotbugs.version>
+
+    </properties>
+
+
     <dependencies>
-
-            <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-            <dependency>
-                <groupId>org.seleniumhq.selenium</groupId>
-                <artifactId>selenium-java</artifactId>
-                <version>3.12.0</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.cucumber</groupId>
-                <artifactId>cucumber-junit</artifactId>
-                <version>4.7.4</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-cucumber4-jvm</artifactId>
-                <version>2.13.0</version>
-            </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20170516</version>
+        </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>4.7.4</version>
+            <version>${cucumber.java.version}</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
-            <version>4.7.4</version>
+            <version>${cucumber.java.version}</version>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency> -->
+        <dependency>
+            <groupId>com.mashape.unirest</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>1.4.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.3</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.12.0</version>
+        </dependency>
 
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.java.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber4-jvm</artifactId>
+            <version>${version.allure}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>${appium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>1.8.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>3.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.grofers</groupId>
+            <artifactId>validator</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/resources/libs/validator-1.0.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest.assured.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
     </dependencies>
 
-
-    
 </project>
