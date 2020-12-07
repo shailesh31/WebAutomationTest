@@ -4,7 +4,6 @@ package main.java.SeleniumController;
  * Created by Shailesh on 05/12/20.
  */
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import main.java.Utils.WebLogger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,7 +30,7 @@ public class WebLauncher {
     public String url;
 
 
-    private String  webBrowser,  driverName;
+    private String webBrowser, driverName;
 //    private ChromeOptions chromeOptions;
 
 //    private String appiumVersion;
@@ -61,12 +60,12 @@ public class WebLauncher {
         isSmokeSuiteRunning = isSmokeSuite;
         readCapabilities();
 
-            {
-                //switch (launchingBrowser) {
-                    //case CHROME:
+        {
+            //switch (launchingBrowser) {
+            //case CHROME:
 
-                    //    System.setProperty("webdriver.chrome.driver", "resources/drivers/chromedriver.exe");
-                      //  driver = new ChromeDriver();
+            //    System.setProperty("webdriver.chrome.driver", "resources/drivers/chromedriver.exe");
+            //  driver = new ChromeDriver();
 
 //                    case FIREFOX:
 //                        System.setProperty("webdriver.gecko.driver", "resources/drivers/geckodriver.exe");
@@ -77,13 +76,13 @@ public class WebLauncher {
 //                        driver = new InternetExplorerDriver();
 //                        break;
 
-                }
-           // }
+        }
+        // }
 
         //WebDriverManager.chromedriver().setup();
         System.setProperty("webdriver.chrome.driver", "resources/drivers/chromedriver.exe");
         driver = new ChromeDriver();
-       // driver.get("https://viewpoint.glasslewis.com/WD/?siteId=DemoClient");
+        // driver.get("https://viewpoint.glasslewis.com/WD/?siteId=DemoClient");
         driver.get(url);
         //driver.manage().window().maximize();
         WebLogger.getInstance().log("setup done.");
@@ -104,8 +103,7 @@ public class WebLauncher {
             }
         } catch (Exception e) {
             WebLogger.getInstance().log("Problem quiting driver: " + e.getMessage());
-        }
-        finally {
+        } finally {
             driver = null;
         }
 
@@ -114,7 +112,7 @@ public class WebLauncher {
     /* Read capabilities from config.properties */
     public void readCapabilities() {
 
-        webBrowser = getProperty("WEB_BROWSER");
+      //  webBrowser = getProperty("WEB_BROWSER");
 
         driverName = getProperty("DRIVER_NAME").toLowerCase();
         url = getProperty("WEB_URL");
@@ -126,11 +124,11 @@ public class WebLauncher {
         return getInstance().driver;
     }
 
-    public static String getSessionId() {
-        if (getDriver() != null)
-            return ((RemoteWebDriver) getDriver()).getSessionId().toString();
-        else
-            return null;
-    }
+//    public static String getSessionId() {
+//        if (getDriver() != null)
+//            return ((RemoteWebDriver) getDriver()).getSessionId().toString();
+//        else
+//            return null;
+//    }
 }
 

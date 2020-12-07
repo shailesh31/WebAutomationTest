@@ -9,6 +9,7 @@ import main.java.SeleniumController.WebLauncher;
 import main.java.Utils.WebLogger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
