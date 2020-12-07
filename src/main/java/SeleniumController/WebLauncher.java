@@ -124,11 +124,11 @@ public class WebLauncher {
         return getInstance().driver;
     }
 
-//    public static String getSessionId() {
-//        if (getDriver() != null)
-//            return ((RemoteWebDriver) getDriver()).getSessionId().toString();
-//        else
-//            return null;
-//    }
+    public static String getSessionId() {
+        if (getDriver() != null)
+            return ((RemoteWebDriver) getDriver()).getSessionId().toString();
+        else
+            return null;
+    }
 }
 
