@@ -4,25 +4,17 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import main.java.PageObjects.GlPageObjects;
-import main.java.Pages.*;
-//import main.java.SeleniumController.CustomPageFactory;
+import main.java.Pages.GLPage;
 import main.java.SeleniumController.WebLauncher;
 import main.java.Utils.CommonUtility;
-//import main.java.db.DataStore;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-import java.util.List;
+/**
+ * Created by Shailesh on 07/12/20.
+ */
 
 public class GLPageSteps {
     GLPage glPage;
-    //GlPageObjects glPageObjects;
-    // WebDriver driver;
-
-
 
 
     public GLPageSteps() {
@@ -30,9 +22,9 @@ public class GLPageSteps {
         glPage = new GLPage(WebLauncher.getInstance().driver);
 
     }
+
     @Given("user is on the landing page for WD site")
     public void user_is_on_the_landing_page_for_WD_site() {
-
 
 
     }
@@ -56,18 +48,13 @@ public class GLPageSteps {
     @Then("the grid displays all meetings that are associated with the country Belgium")
     public void the_grid_displays_all_meetings_that_are_associated_with_the_country_Belgium() {
 
-        CommonUtility.waitForElements(glPage.glPageObjects.countryList,10);
-
-        //System.out.println(glPage.glPageObjects.countryList.size());
-        // CommonUtility.scrollUntilElementFound();
-
+        CommonUtility.waitForElements(glPage.glPageObjects.countryList, 10);
 
         String result = "";
-        for (int i = 0; i<glPage.glPageObjects.countryList.size();i++)
-        {
+        for (int i = 0; i < glPage.glPageObjects.countryList.size(); i++) {
 
             result = glPage.glPageObjects.countryList.get(i).getText();
-            Assert.assertEquals("Belgium",result);
+            Assert.assertEquals("Belgium", result);
 
         }
 
@@ -75,7 +62,6 @@ public class GLPageSteps {
 
     @Then("no meetings associated with any other country appear on the list")
     public void no_meetings_associated_with_any_other_country_appear_on_the_list() {
-
 
 
     }
@@ -96,7 +82,7 @@ public class GLPageSteps {
     @Then("Activision Blizzard Inc should appear in the top banner")
     public void activision_Blizzard_Inc_should_appear_in_the_top_banner() {
         glPage.getTitle();
-        Assert.assertEquals(glPage.glPageObjects.getTitle.getText(),"Activision Blizzard Inc");
+        Assert.assertEquals(glPage.glPageObjects.getTitle.getText(), "Activision Blizzard Inc");
 
     }
 }

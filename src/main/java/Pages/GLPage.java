@@ -22,22 +22,22 @@ public class GLPage {
 
     }
 
-    public void clickOnCountry(){
+    public void clickOnCountry() {
         CommonUtility.waitForElementAndClick(glPageObjects.dropdownSelectionBelgium);
     }
 
-    public void clickOnNextPage(){
+    public void clickOnNextPage() {
         CommonUtility.scrollToBottom();
         CommonUtility.waitForElementAndClick(glPageObjects.nextPageLink);
 
 
     }
 
-    public void hyperClick(){
+    public void hyperClick() {
         CommonUtility.waitForElementAndClick(glPageObjects.hyperLink);
     }
 
-    public void getTitle(){
+    public void getTitle() {
         CommonUtility.waitForElement(glPageObjects.getTitle);
         System.out.println(glPageObjects.getTitle.getText());
 

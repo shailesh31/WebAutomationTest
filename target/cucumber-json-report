@@ -1,13 +1,13 @@
 [
   {
-    "line": 2,
+    "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-12-06T03:19:31.240Z",
+        "start_timestamp": "2020-12-07T01:18:13.696Z",
         "before": [
           {
             "result": {
-              "duration": 9994563700,
+              "duration": 7894261200,
               "status": "passed"
             },
             "match": {
@@ -15,14 +15,14 @@
             }
           }
         ],
-        "line": 9,
+        "line": 8,
         "name": "User should be able to view all meetings that are associated with the country Belgium",
         "description": "",
         "id": "gl;user-should-be-able-to-view-all-meetings-that-are-associated-with-the-country-belgium",
         "after": [
           {
             "result": {
-              "duration": 1207370400,
+              "duration": 753104700,
               "status": "passed"
             },
             "match": {
@@ -35,10 +35,10 @@
         "steps": [
           {
             "result": {
-              "duration": 2291752900,
+              "duration": 2332847900,
               "status": "passed"
             },
-            "line": 11,
+            "line": 10,
             "name": "user is on the landing page for WD site",
             "match": {
               "location": "GLPageSteps.user_is_on_the_landing_page_for_WD_site()"
@@ -47,10 +47,10 @@
           },
           {
             "result": {
-              "duration": 1837000,
+              "duration": 1496900,
               "status": "passed"
             },
-            "line": 12,
+            "line": 11,
             "name": "the Country filter is available",
             "match": {
               "location": "GLPageSteps.the_Country_filter_is_available()"
@@ -59,10 +59,10 @@
           },
           {
             "result": {
-              "duration": 188599500,
+              "duration": 141088900,
               "status": "passed"
             },
-            "line": 13,
+            "line": 12,
             "name": "user selects “Belgium” from the Country filter list on left panel",
             "match": {
               "location": "GLPageSteps.user_selects_Belgium_from_the_Country_filter_list_on_left_panel()"
@@ -71,10 +71,10 @@
           },
           {
             "result": {
-              "duration": 144657000,
+              "duration": 179324400,
               "status": "passed"
             },
-            "line": 14,
+            "line": 13,
             "name": "clicks on Update button for the country filter list",
             "match": {
               "location": "GLPageSteps.clicks_on_Update_button_for_the_country_filter_list()"
@@ -83,10 +83,10 @@
           },
           {
             "result": {
-              "duration": 2957588700,
+              "duration": 2526303900,
               "status": "passed"
             },
-            "line": 15,
+            "line": 14,
             "name": "the grid displays all meetings that are associated with the country Belgium",
             "match": {
               "location": "GLPageSteps.the_grid_displays_all_meetings_that_are_associated_with_the_country_Belgium()"
@@ -95,10 +95,10 @@
           },
           {
             "result": {
-              "duration": 1451700,
+              "duration": 1954600,
               "status": "passed"
             },
-            "line": 16,
+            "line": 15,
             "name": "no meetings associated with any other country appear on the list",
             "match": {
               "location": "GLPageSteps.no_meetings_associated_with_any_other_country_appear_on_the_list()"
@@ -113,11 +113,11 @@
         ]
       },
       {
-        "start_timestamp": "2020-12-06T03:19:48.762Z",
+        "start_timestamp": "2020-12-07T01:18:28.274Z",
         "before": [
           {
             "result": {
-              "duration": 9068670000,
+              "duration": 5942351800,
               "status": "passed"
             },
             "match": {
@@ -125,14 +125,14 @@
             }
           }
         ],
-        "line": 20,
+        "line": 19,
         "name": "User should be able to view Activision Blizzard Inc should appear in the top banner",
         "description": "",
         "id": "gl;user-should-be-able-to-view-activision-blizzard-inc-should-appear-in-the-top-banner",
         "after": [
           {
             "result": {
-              "duration": 861450600,
+              "duration": 725322100,
               "status": "passed"
             },
             "match": {
@@ -145,10 +145,10 @@
         "steps": [
           {
             "result": {
-              "duration": 2240888900,
+              "duration": 2269992400,
               "status": "passed"
             },
-            "line": 22,
+            "line": 21,
             "name": "user is on the landing page for WD site",
             "match": {
               "location": "GLPageSteps.user_is_on_the_landing_page_for_WD_site()"
@@ -157,10 +157,10 @@
           },
           {
             "result": {
-              "duration": 1745811700,
+              "duration": 1975853400,
               "status": "passed"
             },
-            "line": 23,
+            "line": 22,
             "name": "user clicks the Company Name “Activision Blizzard Inc” hyperlink",
             "match": {
               "location": "GLPageSteps.user_clicks_the_Company_Name_Activision_Blizzard_Inc_hyperlink()"
@@ -169,10 +169,10 @@
           },
           {
             "result": {
-              "duration": 916400,
+              "duration": 715000,
               "status": "passed"
             },
-            "line": 24,
+            "line": 23,
             "name": "the user lands onto the “Activision Blizzard Inc” vote card page.",
             "match": {
               "location": "GLPageSteps.the_user_lands_onto_the_Activision_Blizzard_Inc_vote_card_page()"
@@ -181,10 +181,10 @@
           },
           {
             "result": {
-              "duration": 700032400,
+              "duration": 1289856400,
               "status": "passed"
             },
-            "line": 25,
+            "line": 24,
             "name": "Activision Blizzard Inc should appear in the top banner",
             "match": {
               "location": "GLPageSteps.activision_Blizzard_Inc_should_appear_in_the_top_banner()"
