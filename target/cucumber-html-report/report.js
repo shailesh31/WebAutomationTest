@@ -1,7 +1,7 @@
 $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:test/bdd/features/gl.feature");
 formatter.feature({
   "name": "gl",
-  "description": "  As a user,\n  I want to be able to pick timeslot and address for my delivery\n  so that I can get my order. I also want to be able to review my order\n  and then proceed to payment.",
+  "description": "  As a user,\n  I want to be able to view all meetings that are associated with the country Belgium\n  so that no meetings associated with any other country appear on the list.\n  I also want to be able to view Activision Blizzard Inc should appear in the top banner.",
   "keyword": "Feature"
 });
 formatter.scenario({

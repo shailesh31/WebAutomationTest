@@ -4,6 +4,7 @@ package main.java.SeleniumController;
  * Created by Shailesh on 05/12/20.
  */
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import main.java.Utils.WebLogger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -45,7 +46,6 @@ public class WebLauncher {
 //    }
 
 
-
     public static WebLauncher getInstance() {
         if (instance == null) {
             instance = new WebLauncher();
@@ -79,9 +79,11 @@ public class WebLauncher {
 
                 }
            // }
+
+        //WebDriverManager.chromedriver().setup();
         System.setProperty("webdriver.chrome.driver", "resources/drivers/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://viewpoint.glasslewis.com/WD/?siteId=DemoClient");
+       // driver.get("https://viewpoint.glasslewis.com/WD/?siteId=DemoClient");
         driver.get(url);
         //driver.manage().window().maximize();
         WebLogger.getInstance().log("setup done.");

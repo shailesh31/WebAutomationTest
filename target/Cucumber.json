@@ -3,11 +3,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-12-07T02:43:23.641Z",
+        "start_timestamp": "2020-12-07T13:16:14.879Z",
         "before": [
           {
             "result": {
-              "duration": 6957069200,
+              "duration": 5447338200,
               "status": "passed"
             },
             "match": {
@@ -22,7 +22,7 @@
         "after": [
           {
             "result": {
-              "duration": 734821800,
+              "duration": 692698899,
               "status": "passed"
             },
             "match": {
@@ -35,7 +35,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2230971100,
+              "duration": 2202431899,
               "status": "passed"
             },
             "line": 10,
@@ -47,7 +47,7 @@
           },
           {
             "result": {
-              "duration": 1775400,
+              "duration": 717600,
               "status": "passed"
             },
             "line": 11,
@@ -59,7 +59,7 @@
           },
           {
             "result": {
-              "duration": 163990500,
+              "duration": 206189201,
               "status": "passed"
             },
             "line": 12,
@@ -71,7 +71,7 @@
           },
           {
             "result": {
-              "duration": 156548400,
+              "duration": 143166700,
               "status": "passed"
             },
             "line": 13,
@@ -83,7 +83,7 @@
           },
           {
             "result": {
-              "duration": 2301134300,
+              "duration": 2191958000,
               "status": "passed"
             },
             "line": 14,
@@ -95,7 +95,7 @@
           },
           {
             "result": {
-              "duration": 769400,
+              "duration": 645600,
               "status": "passed"
             },
             "line": 15,
@@ -113,11 +113,11 @@
         ]
       },
       {
-        "start_timestamp": "2020-12-07T02:43:36.949Z",
+        "start_timestamp": "2020-12-07T13:16:26.379Z",
         "before": [
           {
             "result": {
-              "duration": 4839078900,
+              "duration": 4294775099,
               "status": "passed"
             },
             "match": {
@@ -132,7 +132,7 @@
         "after": [
           {
             "result": {
-              "duration": 1034051900,
+              "duration": 701197400,
               "status": "passed"
             },
             "match": {
@@ -145,7 +145,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2181447300,
+              "duration": 2161991901,
               "status": "passed"
             },
             "line": 21,
@@ -157,7 +157,7 @@
           },
           {
             "result": {
-              "duration": 1665379500,
+              "duration": 1672748300,
               "status": "passed"
             },
             "line": 22,
@@ -169,7 +169,7 @@
           },
           {
             "result": {
-              "duration": 1021200,
+              "duration": 821100,
               "status": "passed"
             },
             "line": 23,
@@ -181,7 +181,7 @@
           },
           {
             "result": {
-              "duration": 686607900,
+              "duration": 744736300,
               "status": "passed"
             },
             "line": 24,
@@ -200,7 +200,7 @@
       }
     ],
     "name": "gl",
-    "description": "  As a user,\n  I want to be able to pick timeslot and address for my delivery\n  so that I can get my order. I also want to be able to review my order\n  and then proceed to payment.",
+    "description": "  As a user,\n  I want to be able to view all meetings that are associated with the country Belgium\n  so that no meetings associated with any other country appear on the list.\n  I also want to be able to view Activision Blizzard Inc should appear in the top banner.",
     "id": "gl",
     "keyword": "Feature",
     "uri": "file:test/bdd/features/gl.feature",

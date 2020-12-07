@@ -1,8 +1,8 @@
 Feature: gl
   As a user,
-  I want to be able to pick timeslot and address for my delivery
-  so that I can get my order. I also want to be able to review my order
-  and then proceed to payment.
+  I want to be able to view all meetings that are associated with the country Belgium
+  so that no meetings associated with any other country appear on the list.
+  I also want to be able to view Activision Blizzard Inc should appear in the top banner.
 
   @Case1
   Scenario: User should be able to view all meetings that are associated with the country Belgium
