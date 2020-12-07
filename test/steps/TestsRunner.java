@@ -13,7 +13,6 @@ import org.junit.runner.RunWith;
         features = {"test/bdd/features/"},
         glue = {"steps"},
         plugin = {
-                "io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm",
                 "pretty", "json:target/Cucumber.json",
                 "html:target/cucumber-html-report"
         },

@@ -27,6 +27,7 @@ public class GLPage {
     }
 
     public void clickOnNextPage() {
+        CommonUtility.waitForElement(glPageObjects.nextPageLink,20);
         CommonUtility.scrollToBottom();
         CommonUtility.waitForElementAndClick(glPageObjects.nextPageLink);
 

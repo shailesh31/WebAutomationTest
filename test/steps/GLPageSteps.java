@@ -39,6 +39,7 @@ public class GLPageSteps {
         glPage.clickOnCountry();
     }
 
+
     @When("clicks on Update button for the country filter list")
     public void clicks_on_Update_button_for_the_country_filter_list() {
         CommonUtility.waitForElementAndClick(glPage.glPageObjects.updateCountry);
@@ -74,7 +75,7 @@ public class GLPageSteps {
 
     }
 
-    @Then("the user lands onto the “Activision Blizzard Inc” vote card page.")
+    @Then("the user lands onto the “Activision Blizzard Inc” vote card page")
     public void the_user_lands_onto_the_Activision_Blizzard_Inc_vote_card_page() {
 
     }

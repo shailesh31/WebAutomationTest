@@ -8,8 +8,8 @@ import java.util.Properties;
 
 public class ConfigManager {
 
-    private static Properties prop;
-    private static InputStream inputStream;
+    private static final Properties prop;
+    private static final InputStream inputStream;
 
     static {
         try {

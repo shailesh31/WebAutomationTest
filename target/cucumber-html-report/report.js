@@ -110,3 +110,30 @@ formatter.step({
 formatter.match({
   "location": "GLPageSteps.user_clicks_the_Company_Name_Activision_Blizzard_Inc_hyperlink()"
 });
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the user lands onto the “Activision Blizzard Inc” vote card page",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "GLPageSteps.the_user_lands_onto_the_Activision_Blizzard_Inc_vote_card_page()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Activision Blizzard Inc should appear in the top banner",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "GLPageSteps.activision_Blizzard_Inc_should_appear_in_the_top_banner()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+});
