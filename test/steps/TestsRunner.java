@@ -17,7 +17,6 @@ import org.junit.runner.RunWith;
                 "pretty", "json:target/Cucumber.json",
                 "html:target/cucumber-html-report"
         },
-        dryRun = false,
         tags = {"@Case1"}
 )
 public class TestsRunner {

@@ -47,7 +47,7 @@ public class WebLogger {
             fh.setFormatter(formatter);
 
             // the following statement is used to log any messages
-            WebLogger.info("------------ Begining of Automation Logs ------------");
+            WebLogger.info("------------ Beginning of Automation Logs ------------");
 
         } catch (SecurityException e) {
             e.printStackTrace();
