@@ -60,8 +60,6 @@
         <cucumber.java.version>4.7.4</cucumber.java.version>
         <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
-
-
     </properties>
 
 
@@ -70,11 +68,6 @@
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20170516</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>3.7.1</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>

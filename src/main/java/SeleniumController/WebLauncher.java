@@ -1,7 +1,7 @@
 package main.java.SeleniumController;
 
 /**
- * Created by Shailesh on 05/12/20.
+ * Created by Shailesh Sharma on 05/12/20.
  */
 
 import main.java.Utils.WebLogger;
@@ -42,13 +42,8 @@ public class WebLauncher {
             return null;
     }
 
-    //set session key cookie for feature flags
-    //Commenting out this we are not currently using feature flags
-    //driver.manage().addCookie(new Cookie("gr_1_sessionKey", ConfigManager.getProperty("SESSION_KEY")));
-    //driver.navigate().refresh();
-
     /*@BeforeTest */
-    public void start() throws IOException {
+    public void start() {
         if (driver != null) {
             return;
         }
@@ -75,12 +70,11 @@ public class WebLauncher {
             }
         }
 
-        //WebDriverManager.chromedriver().setup();
 
         driver.get(url);
-
-        WebLogger.getInstance().log("setup done.");
-        WebLogger.getInstance().log("Connecting to : " + url);
+//
+//        WebLogger.getInstance().log("setup done.");
+//        WebLogger.getInstance().log("Connecting to : " + url);
     }
 
     public void stop() {

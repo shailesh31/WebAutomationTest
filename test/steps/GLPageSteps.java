@@ -10,7 +10,7 @@ import main.java.Utils.CommonUtility;
 import org.junit.Assert;
 
 /**
- * Created by Shailesh on 07/12/20.
+ * Created by Shailesh Sharma on 07/12/20.
  */
 
 public class GLPageSteps {
@@ -51,11 +51,11 @@ public class GLPageSteps {
 
         CommonUtility.waitForElements(glPage.glPageObjects.countryList, 10);
 
-        String result = "";
+        String CountryName = "";
         for (int i = 0; i < glPage.glPageObjects.countryList.size(); i++) {
 
-            result = glPage.glPageObjects.countryList.get(i).getText();
-            Assert.assertEquals("Belgium", result);
+            CountryName = glPage.glPageObjects.countryList.get(i).getText();
+            Assert.assertEquals("Belgium", CountryName);
 
         }
 
