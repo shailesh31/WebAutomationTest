@@ -11,8 +11,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.io.IOException;
-
 import static main.java.Utils.ConfigManager.getProperty;
 
 
@@ -69,7 +67,6 @@ public class WebLauncher {
 
             }
         }
-
 
         driver.get(url);
 //
