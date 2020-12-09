@@ -7,7 +7,6 @@ import java.util.List;
 
 public class GlPageObjects {
 
-    //Country dropdown selected Belgium
 
     @FindBy(css = "#Belgium-cb-label-CountryFilter")
     public WebElement dropdownSelectionBelgium;

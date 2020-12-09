@@ -69,9 +69,9 @@ public class WebLauncher {
         }
 
         driver.get(url);
-//
-//        WebLogger.getInstance().log("setup done.");
-//        WebLogger.getInstance().log("Connecting to : " + url);
+
+        WebLogger.getInstance().log("setup done.");
+        WebLogger.getInstance().log("Connecting to : " + url);
     }
 
     public void stop() {
