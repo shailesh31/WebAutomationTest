@@ -1,0 +1,39 @@
+{
+  "uuid": "91ea0aa4-110b-48c2-b541-17ab6f1c8918",
+  "name": "Scenario: User should be able to view all meetings that are associated with the country Belgium",
+  "children": [
+    "12ccb565-19f8-4a60-ba5c-8978918d7ea5"
+  ],
+  "befores": [
+    {
+      "name": "GlobalHooks.setup(Scenario)",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1607217583897,
+      "stop": 1607217595142
+    }
+  ],
+  "afters": [
+    {
+      "name": "GlobalHooks.stop(Scenario)",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Screenshot",
+          "source": "4757e9f4-c04f-4ac4-aa3d-d6a025ad1e2e-attachment"
+        }
+      ],
+      "parameters": [],
+      "start": 1607217595285,
+      "stop": 1607217596492
+    }
+  ],
+  "links": [],
+  "start": 1607217583871,
+  "stop": 1607217596510
+}

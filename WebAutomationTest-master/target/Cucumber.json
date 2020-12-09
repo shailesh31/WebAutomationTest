@@ -1,0 +1,209 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-12-09T02:08:33.322Z",
+        "before": [
+          {
+            "result": {
+              "duration": 8181771900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "GlobalHooks.setup(Scenario)"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "User should be able to view all meetings that are associated with the country Belgium",
+        "description": "",
+        "id": "gl;user-should-be-able-to-view-all-meetings-that-are-associated-with-the-country-belgium",
+        "after": [
+          {
+            "result": {
+              "duration": 766638700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "GlobalHooks.stop(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2268752300,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user is on the landing page for WD site",
+            "match": {
+              "location": "GLPageSteps.user_is_on_the_landing_page_for_WD_site()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2142900,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "the Country filter is available",
+            "match": {
+              "location": "GLPageSteps.the_Country_filter_is_available()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 281941600,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user selects “Belgium” from the Country filter list on left panel",
+            "match": {
+              "location": "GLPageSteps.user_selects_Belgium_from_the_Country_filter_list_on_left_panel()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 203750800,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "clicks on Update button for the country filter list",
+            "match": {
+              "location": "GLPageSteps.clicks_on_Update_button_for_the_country_filter_list()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3631896400,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "the grid displays all meetings that are associated with the country Belgium",
+            "match": {
+              "location": "GLPageSteps.the_grid_displays_all_meetings_that_are_associated_with_the_country_Belgium()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1571700,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "no meetings associated with any other country appear on the list",
+            "match": {
+              "location": "GLPageSteps.no_meetings_associated_with_any_other_country_appear_on_the_list()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Case1"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-12-09T02:08:48.698Z",
+        "before": [
+          {
+            "result": {
+              "duration": 5006436700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "GlobalHooks.setup(Scenario)"
+            }
+          }
+        ],
+        "line": 19,
+        "name": "User should be able to view Activision Blizzard Inc should appear in the top banner",
+        "description": "",
+        "id": "gl;user-should-be-able-to-view-activision-blizzard-inc-should-appear-in-the-top-banner",
+        "after": [
+          {
+            "result": {
+              "duration": 759171100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "GlobalHooks.stop(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2299576500,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "user is on the landing page for WD site",
+            "match": {
+              "location": "GLPageSteps.user_is_on_the_landing_page_for_WD_site()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1992833000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "user clicks the Company Name “Activision Blizzard Inc” hyperlink",
+            "match": {
+              "location": "GLPageSteps.user_clicks_the_Company_Name_Activision_Blizzard_Inc_hyperlink()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 609800,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "the user lands onto the “Activision Blizzard Inc” vote card page",
+            "match": {
+              "location": "GLPageSteps.the_user_lands_onto_the_Activision_Blizzard_Inc_vote_card_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 775218000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Activision Blizzard Inc should appear in the top banner",
+            "match": {
+              "location": "GLPageSteps.activision_Blizzard_Inc_should_appear_in_the_top_banner()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Case1"
+          }
+        ]
+      }
+    ],
+    "name": "gl",
+    "description": "  As a user,\n  I want to be able to view all meetings that are associated with the country Belgium\n  so that no meetings associated with any other country appear on the list.\n  I also want to be able to view Activision Blizzard Inc should appear in the top banner.",
+    "id": "gl",
+    "keyword": "Feature",
+    "uri": "file:test/bdd/features/gl.feature",
+    "tags": []
+  }
+]
